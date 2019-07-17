@@ -93,4 +93,32 @@ class Utils{
         $msectime = (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
         return $msectime;
     }
+
+    /**
+     * 格式化时间戳为会话时间格式
+     * @param $datetime
+     * @return false|string
+     */
+    static function datetime_format_chat($datetime = ''){
+        if(empty($datetime)){
+            $datetime = date('Y-m-d H:i:s');
+        }
+        $time = strtotime($datetime);
+        $today_time = strtotime(date('Y-m-d'));
+        $yestoday_time = $today_time - 86400;
+        $monday = strtotime('this week Monday', time());
+
+        if($time > $today_time){
+            return date('今日 H:i', $time);
+        }elseif($time > $yestoday_time){
+            return date('昨日 H:i', $time);
+        }elseif($time > $monday){
+            $week = date("w", $time);
+            $weekarray = array("日", "一", "二", "三", "四", "五", "六");
+            $weekday = '星期'.$weekarray[$week];
+            return $weekday.date('H:i', $time);
+        }else{
+            return date('m月d日 H:i', $time);
+        }
+    }
 }
