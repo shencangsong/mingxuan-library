@@ -1,5 +1,5 @@
 <?php 
-namespace Mingxuan\Utils;
+namespace Mingxuan;
 
 class Utils{
 
