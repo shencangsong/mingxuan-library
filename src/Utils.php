@@ -8,7 +8,7 @@ class Utils{
      * @param string $mobile
      * @return bool
      */
-    static function preg_mobile($mobile = ''){
+    static function verifyMobile($mobile = ''){
         if(preg_match("/^1[3456789]\d{9}$/", $mobile)){
             return true;
         }
@@ -20,7 +20,7 @@ class Utils{
      * @param string $str
      * @return float|int
      */
-    static function strlen_utf8($str = ''){
+    static function strlenUtf8($str = ''){
         return (mb_strlen($str) + strlen($str))/2;
     }
 }
