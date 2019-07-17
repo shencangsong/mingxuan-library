@@ -1,0 +1,20 @@
+{
+    "name": "mingxuan/library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shencangsong",
+            "email": "shencangsong@hc360.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php":">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mingxuan\\":"src"
+        }
+    }
+}
