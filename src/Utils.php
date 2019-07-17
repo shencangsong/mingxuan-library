@@ -82,4 +82,15 @@ class Utils{
         }
         return round($distance, $decimal);
     }
+
+    /**
+     * 获取当前事件毫秒时间戳
+     * @return float
+     */
+    function microtime_float()
+    {
+        list($msec, $sec) = explode(' ', microtime());
+        $msectime = (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+        return $msectime;
+    }
 }
